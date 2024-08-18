@@ -23,3 +23,31 @@ You can install the required packages using `pip`:
 
 ```bash
 pip install flask nodriver beautifulsoup4 asyncio
+
+## Getting Started
+
+### Running the API
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/yourusername/google-search-scraper-api.git
+    cd google-search-scraper-api
+    ```
+
+2. **Run the Flask application:**
+
+    ```bash
+    python app.py
+    ```
+
+    The API will start running on `http://127.0.0.1:5000`.
+
+### API Usage
+
+To use the API, send a GET request to the root endpoint with a `q` parameter, which represents your Google search query.
+
+#### Example Request:
+
+```bash
+curl "http://127.0.0.1:5000/?q=python+web+scraping"
