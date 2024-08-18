@@ -1,18 +1,25 @@
-# Google Search Simplified API
+# Google Search Scraper API
 
-Google Search Simplified is an API that allows you to perform Google searches and retrieve search results in a structured JSON format. This API is built using Flask, asyncio, and uses a headless browser for scraping Google search results.
+This is a Flask-based API that scrapes Google search results asynchronously using the `nodriver` package for browser automation and `BeautifulSoup` for HTML parsing. The API returns detailed information about search results, including URLs, titles, site names, and overviews.
 
 ## Features
 
-- **Asynchronous Scraping**: Efficiently scrape Google search results using asyncio.
-- **Structured Output**: Returns search results including titles, URLs, site names, overviews, and site logos in JSON format.
-- **Error Handling**: Provides clear error messages and hints for invalid or unclear queries.
+- **Asynchronous Scraping:** Uses `asyncio` and `nodriver` to scrape Google search results efficiently.
+- **Headless Browser Automation:** The API runs the browser in headless mode for fast and resource-efficient scraping.
+- **HTML Parsing:** Utilizes `BeautifulSoup` to extract and organize data from the HTML content.
+- **Customizable Queries:** Allows users to perform Google searches through a simple API endpoint.
 
-## Getting Started
+## Prerequisites
 
-### Prerequisites
+Before running the API, ensure that you have the following installed:
 
-Make sure you have Python 3.7+ installed. You will also need to install the required packages:
+- Python 3.7 or higher
+- `nodriver` package
+- `Flask` package
+- `BeautifulSoup` package
+- `asyncio` package
+
+You can install the required packages using `pip`:
 
 ```bash
-pip install Flask nodriver beautifulsoup4 asyncio
+pip install flask nodriver beautifulsoup4 asyncio
