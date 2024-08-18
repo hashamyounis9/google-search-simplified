@@ -63,3 +63,14 @@ curl "http://127.0.0.1:5000/?q=python+web+scraping"
     },
     
 ]
+```
+### Error Handling
+
+The API includes basic error handling. If something goes wrong, you may receive an error response like the following:
+
+```json
+{
+    "error": "Some error occurred while performing the query",
+    "hint": "Maybe your query is invalid/unclear"
+}
+```
