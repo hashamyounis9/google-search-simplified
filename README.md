@@ -82,4 +82,4 @@ You can customize the scraping behavior by modifying the `scrape` function in `a
 
 Here is a sample image result for the query "Apples":
 
-![Sample Image for Apples](https://example.com/path-to-your-image.jpg)
+![Sample Image for Apples]([https://example.com/path-to-your-image.jpg](https://drive.google.com/file/d/1PaV1t-WVoJVLQbgiSdHSj5qIqG0Ik8JM/view?usp=sharing))
