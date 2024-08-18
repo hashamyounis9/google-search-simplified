@@ -74,3 +74,6 @@ The API includes basic error handling. If something goes wrong, you may receive 
     "hint": "Maybe your query is invalid/unclear"
 }
 ```
+### Customization
+
+You can customize the scraping behavior by modifying the `scrape` function in `app.py`. For example, you can change the elements being selected or the way the HTML is parsed.
