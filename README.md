@@ -53,7 +53,6 @@ To use the API, send a GET request to the root endpoint with a `q` parameter, wh
 ```bash
 curl "http://127.0.0.1:5000/?q=python+web+scraping"
 
-```json
 [
     {
         "site_url": "https://example.com",
@@ -62,5 +61,5 @@ curl "http://127.0.0.1:5000/?q=python+web+scraping"
         "result_overview": "This is a brief overview of the search result.",
         "site_logo": "https://example.com/logo.png"
     },
-    ...
+    
 ]
