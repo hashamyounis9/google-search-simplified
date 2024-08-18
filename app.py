@@ -11,7 +11,7 @@ async def scrape(q):
     browser = await uc.start(headless=True)
     page = await browser.get(f"https://google.com/search?q={q}")
     await page.scroll_down(75)
-
+    await page.sleep(2)
     titles = []
     try:
         # global title
