@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 
 async def scrape(q):
-    browser = await uc.start()
+    browser = await uc.start(headless=True)
     page = await browser.get(f"https://google.com/search?q={q}")
     titles = []
     try:
