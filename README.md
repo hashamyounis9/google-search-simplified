@@ -77,3 +77,9 @@ The API includes basic error handling. If something goes wrong, you may receive 
 ### Customization
 
 You can customize the scraping behavior by modifying the `scrape` function in `app.py`. For example, you can change the elements being selected or the way the HTML is parsed.
+
+### Sample Query: "Apples"
+
+Here is a sample image result for the query "Apples":
+
+![Sample Image for Apples](https://example.com/path-to-your-image.jpg)
