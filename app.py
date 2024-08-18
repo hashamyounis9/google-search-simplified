@@ -12,6 +12,8 @@ async def scrape(q):
     page = await browser.get(f"https://google.com/search?q={q}")
     await page.scroll_down(75)
     await page.sleep(2)
+    await page.wait_for(selector='#botstuff > div > div:nth-child(3)', timeout=3)
+
     titles = []
     try:
         # global title
