@@ -16,7 +16,6 @@ async def scrape(q):
 
     titles = []
     try:
-        # global title
         titles = await page.select_all('h3')
     except:
         return {"error": "Some error occured while performing query",
