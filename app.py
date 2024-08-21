@@ -1,4 +1,3 @@
-
 from flask import Flask, request, jsonify
 import nodriver as uc
 from bs4 import BeautifulSoup
@@ -21,7 +20,7 @@ async def scrape(q):
         titles = await page.select_all('h3')
     except:
         return {"error": "Some error occured while performing query",
-                        "hint": "Maybe your query is invalid/unclear"}
+                "hint": "Maybe your query is invalid/unclear"}
 
     elements = await page.select_all('.N54PNb.BToiNc.cvP2Ce')
     searche_results = elements
@@ -31,32 +30,22 @@ async def scrape(q):
     for result in searche_results:
         search = {}
         soap = BeautifulSoup(await result.get_html(), 'html.parser')
+
         anchor = soap.find('a')
-        if anchor:
-            search['site_url'] = anchor.get('href')
-        else:
-            search['site_url'] = None
+        search['site_url'] = anchor.get('href') if anchor else None
+
         title = soap.find("h3")
-        if title:
-            search['result_heading'] = title.text.strip()
-        else:
-            search['result_heading'] = None
+        search['result_heading'] = title.text.strip() if title else None
+
         site_name = soap.find(class_="VuuXrf")
-        if site_name:
-            search['result_by_site'] = site_name.text.strip()
-        else:
-            search['result_by_site'] = None
-        overview = soap.find(
-            class_="VwiC3b yXK7lf lVm3ye r025kc hJNv6b Hdw6tb")
-        if overview:
-            search['result_overview'] = overview.text.strip()
-        else:
-            search['result_overview'] = None
+        search['result_by_site'] = site_name.text.strip() if site_name else None
+
+        overview = soap.find(class_="VwiC3b yXK7lf lVm3ye r025kc hJNv6b Hdw6tb")
+        search['result_overview'] = overview.text.strip() if overview else None
+
         img = soap.find('img')
-        if img:
-            search['site_logo'] = img.get('src')
-        else:
-            search['img'] = None
+        search['site_logo'] = img.get('src') if img else None
+
         results.append(search)
     browser.stop()
     return results
@@ -76,4 +65,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
