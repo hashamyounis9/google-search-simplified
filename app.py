@@ -21,7 +21,7 @@ async def scrape(q):
         return {"error": "Some error occured while performing query",
                 "hint": "Maybe your query is invalid/unclear"}
 
-    elements = await page.select_all('.N54PNb.BToiNc.cvP2Ce')
+    elements = await page.select_all('.MjjYud')
     searche_results = elements
 
     results = []
@@ -47,7 +47,12 @@ async def scrape(q):
 
         results.append(search)
     browser.stop()
-    return results
+    actual_results = []
+    for result in results:
+        if not result['site_url']:
+            continue
+        actual_results.append(result)
+    return actual_results
 
 
 @app.route('/')
